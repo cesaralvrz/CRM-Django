@@ -46,6 +46,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    # Agregamos esto
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -54,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'customer.urls'
+ROOT_URLCONF = 'customer.urls' 
 
 TEMPLATES = [
     {
@@ -122,6 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# Agregamos esto
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -132,4 +137,4 @@ STATICFILES_DIRS = [
 ]
 
 # Cuando subamos una imagen se subirá gracias a este MEDIA ROOT
-MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
